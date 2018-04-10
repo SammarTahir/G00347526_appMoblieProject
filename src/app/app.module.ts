@@ -7,22 +7,35 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CalculatorPage } from '../pages/calculator/calculator';
+import { IncomePage } from '../pages/income/income';
+import { ExpensePage } from '../pages/expense/expense';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    CalculatorPage
+    CalculatorPage,
+    IncomePage,
+    ExpensePage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      menuType: 'overlay',
+      platform:{
+        ios:{
+          menuType: 'overlay',
+        }
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    CalculatorPage
+    CalculatorPage,
+    IncomePage,
+    ExpensePage
   ],
   providers: [
     StatusBar,

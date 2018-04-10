@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { CalculatorPage } from '../calculator/calculator';
 
 @Component({
@@ -8,10 +8,13 @@ import { CalculatorPage } from '../calculator/calculator';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public menuCtrl: MenuController) {
 
   }
   openCalculator(){
     this.navCtrl.push(CalculatorPage);
+  }
+  openMenu(){
+    this.menuCtrl.open();
   }
 }
