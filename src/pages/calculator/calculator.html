@@ -10,23 +10,27 @@
 
 
 <ion-content padding>
-    <ion-title>
-    {{answer}}
-    </ion-title> 
+  <ion-title>
+    {{result}}
+  </ion-title> 
     <br>
-    <button ion-button round value="7">7</button>
-    <button ion-button round value="8">8</button>
-    <button ion-button round value="9">9</button>
+  <button ion-button round (click)="addToCalculation('7')">7</button>
+  <button ion-button round (click)="addToCalculation('8')">8</button>
+  <button ion-button round (click)="addToCalculation('9')">9</button>
+  <button ion-button (click)="calculate('/')">/</button>
     <br>
-    <button ion-button round value="4">4</button>
-    <button ion-button round value="5">5</button>
-    <button ion-button round value="6">6</button>
+  <button ion-button round (click)="addToCalculation('4')">4</button>
+  <button ion-button round (click)="addToCalculation('5')">5</button>
+  <button ion-button round (click)="addToCalculation('6')">6</button>
+  <button ion-button (click)="calculate('*')">X</button>
     <br>
-    <button ion-button round value="1">1</button>
-    <button ion-button round value="2">2</button>
-    <button ion-button round value="3">3</button>
+  <button ion-button round (click)="addToCalculation('1')">1</button>
+  <button ion-button round (click)="addToCalculation('2')">2</button>
+  <button ion-button round (click)="addToCalculation('3')">3</button>
+  <button ion-button (click)="calculate('-')">-</button>
     <br>
-    <button ion-button round value="clear">C</button>
-    <button ion-button round value="0">0</button>
-    <button ion-button round value="=">=</button>
+  <button ion-button round (click)="addToCalculation('.')">.</button>
+  <button ion-button round (click)="addToCalculation('0')">0</button> 
+  <button ion-button round (click)="getTotal()">=</button>
+  <button ion-button (click)="calculate('+')">+</button>
 </ion-content>

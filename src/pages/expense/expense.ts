@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ExpensePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+import { IonicPage, NavController } from 'ionic-angular';
+import { CalculatorPage } from '../calculator/calculator';
+import { Storage } from '@ionic/storage';
+import { IncomePage } from '../income/income';
 @IonicPage()
 @Component({
   selector: 'page-expense',
@@ -15,11 +10,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ExpensePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ExpensePage');
+  constructor(public navCtrl: NavController, public storage: Storage) {
   }
 
 }

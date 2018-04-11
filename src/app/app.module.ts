@@ -9,6 +9,8 @@ import { HomePage } from '../pages/home/home';
 import { CalculatorPage } from '../pages/calculator/calculator';
 import { IncomePage } from '../pages/income/income';
 import { ExpensePage } from '../pages/expense/expense';
+import { IonicStorageModule } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { ExpensePage } from '../pages/expense/expense';
           menuType: 'overlay',
         }
       }
-    })
+    }),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
