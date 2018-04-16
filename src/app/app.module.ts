@@ -10,6 +10,10 @@ import { CalculatorPage } from '../pages/calculator/calculator';
 import { IncomePage } from '../pages/income/income';
 import { ExpensePage } from '../pages/expense/expense';
 import { IonicStorageModule } from '@ionic/storage';
+import { TouchID } from '@ionic-native/touch-id';
+import { PayslipPage } from '../pages/payslip/payslip';
+
+
 
 
 @NgModule({
@@ -18,7 +22,8 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     CalculatorPage,
     IncomePage,
-    ExpensePage
+    ExpensePage,
+    PayslipPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,7 @@ import { IonicStorageModule } from '@ionic/storage';
         }
       }
     }),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,10 +43,12 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     CalculatorPage,
     IncomePage,
-    ExpensePage
+    ExpensePage,
+    PayslipPage
   ],
   providers: [
     StatusBar,
+    TouchID,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

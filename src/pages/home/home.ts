@@ -4,6 +4,7 @@ import { CalculatorPage } from '../calculator/calculator';
 import { Storage } from '@ionic/storage';
 import { IncomePage } from '../income/income';
 import { ExpensePage } from '../expense/expense';
+import { PayslipPage } from '../payslip/payslip';
 
 @Component({
   selector: 'page-home',
@@ -26,5 +27,9 @@ export class HomePage {
   }
   openMenu(){
     this.menuCtrl.open();
+  }
+
+  openPayslip(){
+    this.navCtrl.push(PayslipPage);
   }
 }
