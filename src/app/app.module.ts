@@ -12,7 +12,7 @@ import { ExpensePage } from '../pages/expense/expense';
 import { IonicStorageModule } from '@ionic/storage';
 import { TouchID } from '@ionic-native/touch-id';
 import { PayslipPage } from '../pages/payslip/payslip';
-
+import { Camera } from '@ionic-native/camera';
 
 
 
@@ -49,6 +49,7 @@ import { PayslipPage } from '../pages/payslip/payslip';
   providers: [
     StatusBar,
     TouchID,
+    Camera,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
