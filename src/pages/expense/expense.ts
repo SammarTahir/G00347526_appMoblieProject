@@ -1,16 +1,40 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
-import { CalculatorPage } from '../calculator/calculator';
+import { IonicPage } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { IncomePage } from '../income/income';
+import { AlertController } from 'ionic-angular';
+import { ActionSheetController } from 'ionic-angular';
 @IonicPage()
+
 @Component({
   selector: 'page-expense',
   templateUrl: 'expense.html',
 })
 export class ExpensePage {
+ 
+  notes: any = [];
 
-  constructor(public navCtrl: NavController, public storage: Storage) {
+  constructor(private storage:Storage, private alertCtrl: AlertController, public actionSheetCtrl: ActionSheetController) {
+
   }
 
+  addNote(){
+  let prompt = this.alertCtrl.create({
+    title: 'Enter the amount:',
+    message: 'Add information and amount',
+    inputs: [{
+      name: 'title'
+    }],
+    buttons: [{
+      text: 'Cancel'
+    },
+    {
+      text: 'Add',
+      handler: data => {
+        this.storage.set("timeline",this.notes.push(data));
+
+      }
+    }]
+    });
+      prompt.present();
+  }
 }

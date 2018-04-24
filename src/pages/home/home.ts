@@ -11,18 +11,21 @@ import { PayslipPage } from '../payslip/payslip';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public storage: Storage, public navCtrl: NavController,
-    public menuCtrl: MenuController) {
+ timeline : any[];
+  constructor(public storage: Storage, public navCtrl: NavController, public menuCtrl: MenuController) {
 
   }
+  
   openCalculator(){
+    this.menuCtrl.close();
     this.navCtrl.push(CalculatorPage);
   }
   openIncome(){
+    this.menuCtrl.close();
     this.navCtrl.push(IncomePage);
   }
   openExpense(){
+    this.menuCtrl.close();
     this.navCtrl.push(ExpensePage);
   }
   openMenu(){
@@ -30,6 +33,7 @@ export class HomePage {
   }
 
   openPayslip(){
+    this.menuCtrl.close();
     this.navCtrl.push(PayslipPage);
   }
 }
