@@ -14,6 +14,8 @@ import { TouchID } from '@ionic-native/touch-id';
 import { PayslipPage } from '../pages/payslip/payslip';
 import { Camera } from '@ionic-native/camera';
 import { AlertController } from 'ionic-angular';
+import { StockProvider } from '../providers/stock/stock';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import { AlertController } from 'ionic-angular';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp,{
       menuType: 'overlay',
       platform:{
@@ -51,7 +54,8 @@ import { AlertController } from 'ionic-angular';
     TouchID,
     Camera,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    StockProvider
   ]
 })
 export class AppModule {}

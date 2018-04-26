@@ -5,17 +5,18 @@ import { Storage } from '@ionic/storage';
 import { IncomePage } from '../income/income';
 import { ExpensePage } from '../expense/expense';
 import { PayslipPage } from '../payslip/payslip';
+import { StockProvider } from '../../providers/stock/stock';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
- timeline : any[];
-  constructor(public storage: Storage, public navCtrl: NavController, public menuCtrl: MenuController) {
+  stocks:any[]=[];
+  constructor(public storage: Storage, public navCtrl: NavController, public menuCtrl: MenuController, private mp:StockProvider) {
 
   }
-  
+
   openCalculator(){
     this.menuCtrl.close();
     this.navCtrl.push(CalculatorPage);
@@ -35,5 +36,13 @@ export class HomePage {
   openPayslip(){
     this.menuCtrl.close();
     this.navCtrl.push(PayslipPage);
+  }
+
+  ionViewDidLoad() {
+    // console.log("I'm alive!");
+    this.mp.GetStockData().subscribe(data =>
+    {
+        this.stocks = data.Search;
+    })
   }
 }

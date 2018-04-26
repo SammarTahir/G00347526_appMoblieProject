@@ -24,7 +24,16 @@
       </ion-menu>
     <ion-nav #mycontent [root]="rootPage"></ion-nav>
 
+
     <ion-title>Timeline</ion-title>
-    <button ion-button color="twitter" (click)="openPayslip()">I'm a button</button>
-</ion-content>
+    <ion-list>
+      <ion-item *ngFor="let stock of stocks">
+        <p>{{stock.name}}</p>  
+        
+      </ion-item>
+    </ion-list>
+
+
+
+  </ion-content>
 
