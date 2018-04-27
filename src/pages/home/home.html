@@ -3,37 +3,43 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Expenese Tracker</ion-title>
+    <ion-title>Money Expert</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-menu [content]="mycontent">
-        <ion-content>
-          <ion-list>
-            <button ion-button (click)="openPayslip()">Payslip</button>
-            <br>
-            <button ion-button color="twitter" (click)="openExpense()">Add Expenese</button>
-            <br>
-            <button ion-button (click)="openIncome()">Add Income</button>
-            <br>
-            <button ion-button (click)="openCalculator()">Calculator</button>
-            <ion-item menuClose detail-none>Close</ion-item>
-          </ion-list>
-        </ion-content>
-      </ion-menu>
-    <ion-nav #mycontent [root]="rootPage"></ion-nav>
+  <ion-menu [content]="mycontent">
+    <ion-content>
+      <ion-list>
+        <button ion-button (click)="openPayslip()">Payslip</button>
+        <br>
+        <button ion-button (click)="openExpense()">Add Expenese</button>
+        <br>
+        <button ion-button (click)="openIncome()">Add Income</button>
+        <br>
+        <button ion-button (click)="openCalculator()">Calculator</button>
+        <ion-item menuClose detail-none>Close</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-nav #mycontent [root]="rootPage"></ion-nav>
 
+  <h1 text-center>Currency Exchange</h1>
+  <ion-list>
+    <ion-item color="twitter">
+      <p text-center>Base Currency: {{base}} - €1</p>
+      <p>JPY (Japanese Yen): ¥{{ratesJPY}}</p>  
+      <p>GBP (British Pound): £{{ratesGBP}}</p>  
+      <p>USD (US Dollar): ${{ratesUSD}}</p> 
+      <p>BHD (Bahraini Dinar): د.ب{{ratesBHD}}</p> 
+      <p>KWD (Kuwaiti Dinar): ‎د.ك{{ratesKWD}}</p> 
+      <p>LVL (Lavtvian Lat): Ls{{ratesBHD}}</p> 
+      <p>BHD (Omani Rial): ﷼{{ratesBHD}}</p>  
+      <p text-right>Last Updated: {{time}}</p>
+    </ion-item>
+  </ion-list>
 
-    <ion-title>Timeline</ion-title>
-    <ion-list>
-      <ion-item *ngFor="let stock of stocks">
-        <p>{{stock.name}}</p>  
-        
-      </ion-item>
-    </ion-list>
-
-
+  <h1 text-center>Cryptocurrency Exchange</h1>
 
   </ion-content>
 
