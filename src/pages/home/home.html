@@ -10,16 +10,21 @@
 <ion-content padding>
   <ion-menu [content]="mycontent">
     <ion-content>
-      <ion-list>
-        <button ion-button (click)="openPayslip()">Payslip</button>
-        <br>
-        <button ion-button (click)="openExpense()">Add Expenese</button>
-        <br>
-        <button ion-button (click)="openIncome()">Add Income</button>
-        <br>
-        <button ion-button (click)="openCalculator()">Calculator</button>
+      <ion-grid>
+        <ion-row>
+          <button ion-button (click)="openPayslip()">Online Banking</button>
+        </ion-row>
+        <ion-row>
+          <button ion-button (click)="openExpense()">Money tracking</button>
+        </ion-row>
+        <ion-row>
+          <button ion-button (click)="openIncome()">Exchange Rate</button>
+        </ion-row>
+        <ion-row>
+          <button ion-button (click)="openCalculator()">Calculator App</button>
+        </ion-row>
         <ion-item menuClose detail-none>Close</ion-item>
-      </ion-list>
+      </ion-grid>
     </ion-content>
   </ion-menu>
   <ion-nav #mycontent [root]="rootPage"></ion-nav>
@@ -40,6 +45,20 @@
   </ion-list>
 
   <h1 text-center>Cryptocurrency Exchange</h1>
+  <ion-list>
+      <ion-item color="twitter">
+      <p text-center>Base Currency: {{baseCrypt}} - 1</p>
+      <p (click)="  openWebpage('https://coinmarketcap.com/currencies/litecoin/')">LTC (Litecoin): {{ratesLTC}}</p>  
+      <p (click)="  openWebpage('https://coinmarketcap.com/currencies/ethereum/')">ETH (Ethereum): {{ratesETH}}</p>  
+      <p (click)="  openWebpage('https://coinmarketcap.com/currencies/zcash/')">ZEC (Zcash): {{ratesZEC}}</p> 
+      <p (click)="  openWebpage('https://coinmarketcap.com/currencies/ripple/')">XRP (Ripple): {{ratesXRP}}</p> 
+      <p (click)="  openWebpage('https://coinmarketcap.com/currencies/monero/')">XMR (Monero): {{ratesXMR}}</p> 
+      <p (click)="  openWebpage('https://coinmarketcap.com/currencies/tether/')">USDT (Tether): {{ratesUSDT}}</p> 
+      <p (click)="  openWebpage('https://coinmarketcap.com/currencies/nem/')">XEM (Nem): {{ratesXEM}}</p>  
+      <p text-right>Last Updated: {{time}}</p>
+      </ion-item>
+    </ion-list>
 
+    
   </ion-content>
 
