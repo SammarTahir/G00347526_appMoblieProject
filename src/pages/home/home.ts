@@ -101,6 +101,6 @@ export class HomePage {
     const options : InAppBrowserOptions = {
       zoom: 'no'
     }
-    const browser = this.iab.create(url, '_system', options);
+   this.iab.create(url, '_system', options);
   }
 }

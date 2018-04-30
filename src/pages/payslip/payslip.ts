@@ -1,22 +1,17 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TouchID } from '@ionic-native/touch-id';
-
-/**
- * Generated class for the PayslipPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
 
 @IonicPage()
+
 @Component({
   selector: 'page-payslip',
   templateUrl: 'payslip.html',
 })
 export class PayslipPage {
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams, private touchId: TouchID) {
+  url: string;
+  constructor(private iab: InAppBrowser, public navCtrl: NavController, public navParams: NavParams, private touchId: TouchID) {
     this.touchId.isAvailable()
     .then(
       res => console.log('TouchID is available!'),
@@ -34,4 +29,10 @@ export class PayslipPage {
     console.log('ionViewDidLoad PayslipPage');
   }
 
+  openWebpage(url: string){
+    const options : InAppBrowserOptions = {
+      zoom: 'no'
+    }
+   this.iab.create(url, '_system', options);
+  }
 }
