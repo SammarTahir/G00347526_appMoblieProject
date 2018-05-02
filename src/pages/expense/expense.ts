@@ -13,8 +13,10 @@ export class ExpensePage {
  
   notes: any = [];
 
-  constructor(private storage:Storage, private alertCtrl: AlertController, public actionSheetCtrl: ActionSheetController) {
-
+  constructor(private storage: Storage, private alertCtrl: AlertController, public actionSheetCtrl: ActionSheetController) {
+    this.storage.get('timeline').then((data)=>{
+      this.notes = data;
+    });
   }
 
   addNote(){
@@ -30,7 +32,7 @@ export class ExpensePage {
     {
       text: 'Add',
       handler: data => {
-        this.storage.set("timeline",this.notes.push(data));
+        this.storage.set('timeline',this.notes.push(data));
 
       }
     }]

@@ -15,6 +15,7 @@ import { Camera } from '@ionic-native/camera';
 import { StockProvider } from '../providers/stock/stock';
 import { HttpClientModule } from '@angular/common/http';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { Storage } from "@ionic/storage";
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     StockProvider,
-    InAppBrowser
+    InAppBrowser,
+    
   ]
 })
 export class AppModule {}
