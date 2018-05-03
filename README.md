@@ -1,21 +1,19 @@
-Expense tracker
+Money Expert
 
-Home page;
-    - timeline of all income/expense
+
+Home page:
+    - Shows currency rates
+    - Shows crypto currency rates
+    - Allows user to click on crypto rates for more information on websites
     - menu nav
-    - click on income/expense to add more detail
 
-Detail page;
-    - can add picture of product, payslip, etc..
-    - add note to product
+Payslip page:
+    - Need touchID to access page(Only works with iOS devices)
+    - Allows user to open safe bank websites in system browsers
 
-Income;
-    - enter amount
-    - choose catagory
+Expense:
+    - Enter notes to keep track of money or bills
+    - Will keep every note you make safe
 
-Expense;
-    - enter amount
-    - choose catagory
-
-Calculator;
+Calculator:
     - basic calculator
