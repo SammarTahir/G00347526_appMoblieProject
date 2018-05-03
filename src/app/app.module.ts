@@ -6,7 +6,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CalculatorPage } from '../pages/calculator/calculator';
-import { IncomePage } from '../pages/income/income';
 import { ExpensePage } from '../pages/expense/expense';
 import { IonicStorageModule } from '@ionic/storage';
 import { TouchID } from '@ionic-native/touch-id';
@@ -15,7 +14,7 @@ import { Camera } from '@ionic-native/camera';
 import { StockProvider } from '../providers/stock/stock';
 import { HttpClientModule } from '@angular/common/http';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { Storage } from "@ionic/storage";
+
 
 
 @NgModule({
@@ -23,7 +22,6 @@ import { Storage } from "@ionic/storage";
     MyApp,
     HomePage,
     CalculatorPage,
-    IncomePage,
     ExpensePage,
     PayslipPage
   ],
@@ -45,7 +43,6 @@ import { Storage } from "@ionic/storage";
     MyApp,
     HomePage,
     CalculatorPage,
-    IncomePage,
     ExpensePage,
     PayslipPage
   ],

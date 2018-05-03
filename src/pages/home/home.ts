@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, MenuController } from 'ionic-angular';
 import { CalculatorPage } from '../calculator/calculator';
 import { Storage } from '@ionic/storage';
-import { IncomePage } from '../income/income';
 import { ExpensePage } from '../expense/expense';
 import { PayslipPage } from '../payslip/payslip';
 import { StockProvider } from '../../providers/stock/stock';
@@ -40,13 +39,10 @@ export class HomePage {
 
   }
 
+  // Opens new pages 
   openCalculator(){
     this.menuCtrl.close();
     this.navCtrl.push(CalculatorPage);
-  }
-  openIncome(){
-    this.menuCtrl.close();
-    this.navCtrl.push(IncomePage);
   }
   openExpense(){
     this.menuCtrl.close();
@@ -55,12 +51,12 @@ export class HomePage {
   openMenu(){
     this.menuCtrl.open();
   }
-
   openPayslip(){
     this.menuCtrl.close();
     this.navCtrl.push(PayslipPage);
   }
 
+  // Gets rates information
   loadData() {
     this.mp.getData().then((data) => {
       console.log(data);
@@ -78,6 +74,7 @@ export class HomePage {
     });
   }
 
+  // Gets rates information
   loadResult() {
     this.mp.getResult().then((data) => {
       this.exchangeCrpt = data;
@@ -91,12 +88,14 @@ export class HomePage {
       this.ratesXEM = this.exchangeCrpt.rates[1].rate;
     });
   }
+
   ionViewDidLoad() {
     this.loadData();
     this.loadResult();
     
   }
 
+  // Allows links to be open on the system browser
   openWebpage(url: string){
     const options : InAppBrowserOptions = {
       zoom: 'no'

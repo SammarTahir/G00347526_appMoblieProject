@@ -25,6 +25,8 @@ export class CalculatorPage {
     this.clear = false;
     this.previous_operator = false;
   }
+ 
+// Calculator functions below for the calculator app. Default placeholder is 0  
 
   addToCalculation(value) {
 

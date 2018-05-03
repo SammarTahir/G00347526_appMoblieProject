@@ -6,9 +6,12 @@ import 'rxjs/add/operator/map';
 export class StockProvider {
 
   constructor(public http: HttpClient) {
+    // Checking to see if StockProvider works
     console.log('Hello StockProvider Provider');
   }
 
+
+  // Getting information from the api for currency exchange
   getData(){
     return new Promise(resolve => {
  
@@ -23,6 +26,7 @@ export class StockProvider {
  
   }
 
+  // Getting information from the api for crypto currency exchange
   getResult(){
     return new Promise(resolve => {
  

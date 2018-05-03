@@ -12,6 +12,7 @@ import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser'
 export class PayslipPage {
   url: string;
   constructor(private iab: InAppBrowser, public navCtrl: NavController, public navParams: NavParams, private touchId: TouchID) {
+    // Checking to see if touchId is available on device.
     this.touchId.isAvailable()
     .then(
       res => console.log('TouchID is available!'),
@@ -29,6 +30,7 @@ export class PayslipPage {
     console.log('ionViewDidLoad PayslipPage');
   }
 
+  // Opens link in the system browser
   openWebpage(url: string){
     const options : InAppBrowserOptions = {
       zoom: 'no'
